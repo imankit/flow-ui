@@ -1,0 +1,59 @@
+body{
+    height: 100%;
+}
+#app{
+    height: 100%;
+}
+#wrapper{
+    height: 100%;
+}
+.main{
+    height: 100%;
+    background-color: #EFF1F5
+}
+.sidbarcomponent{
+    height: 95%;
+    width:20%;
+    float: left;
+    background-color: white;
+}
+.componentcanvas{
+   height: 95%;
+    width: 80%;
+    float: left;
+    position: relative;
+}
+.header{
+    width: 100%;
+    height: 5%;
+    float: left;
+    background-color: white;
+}
+.componentselectorContainer{
+    float: left;
+    width: 50%;
+    height: 100px;
+    /*border: 1px solid black;*/
+}
+.item {
+    position: absolute;
+    height:80px; width: 80px;
+    border: 2px solid black;
+}
+.itemPreview{
+    height: 84px;
+    width: 93px;
+    border: 2px solid #989898;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.itemPreviewText{
+    text-align: center;
+    width: 100%;
+    float: left;
+    margin-top: 13px;
+    font-weight: bolder;
+}
