@@ -3,7 +3,7 @@ import { observer,inject } from "mobx-react"
 const commonEnd = {
 	endpoint: "Dot",
 	paintStyle: { fillStyle: "blue", radius: 7 },
-	maxConnections: -1,
+	maxConnections: 1,
 	dropOptions: { hoverClass: "hover", activeClass: "active" },
 	isTarget: true,
 	overlays: [["Label", { location: [0.5, -0.5], label: "", cssClass: "endpointTargetLabel" }]]
@@ -14,7 +14,7 @@ const commonSource = {
 	    strokeStyle: "green", fillStyle: "green", radius: 5, lineWidth: 1
 	},
 	isSource: true,
-	maxConnections: -1,
+	maxConnections: 1,
 	connector: ["Flowchart", { stub: [40, 60], gap: 10, cornerRadius: 5, alwaysRespectStubs: true }],
 	dragOptions: {},
 	overlays: [["Label", { location: [0.5, 1.5], label: "", cssClass: "endpointSourceLabel", }]]
@@ -25,10 +25,27 @@ class Canvas extends React.Component {
 	constructor(){
 		super()
 		this.state = {
+			
 		}
 	}
 	componentDidMount(){
-		
+		let zoomDefault = 100
+		setTimeout(()=>{
+			let canvas = $('.componentcanvas')
+			$('.componentcanvas').bind('mousewheel DOMMouseScroll',function(e){
+				let canvas = $('.componentcanvas')
+				if(e.originalEvent.wheelDelta /120 > 0) {
+					zoomDefault += 5
+					let zoom = zoomDefault+"%"
+		            canvas.css('zoom',zoom)
+		        }
+		        else{
+		        	zoomDefault -= 5
+					let zoom = zoomDefault+"%"
+		            canvas.css('zoom',zoom)
+		        }
+			})
+		},0)
 	}
 	componentDidUpdate(){
 		setTimeout(()=>{
@@ -55,8 +72,9 @@ class Canvas extends React.Component {
 				    console.log(info)
 				});
 	            
-	        	jsPlumb.draggable($('.item'));
-	            // jsPlumb.draggable(".item");
+	        	jsPlumb.draggable($('.item'),{
+	        		containment:'.componentcanvas'
+	        	});
         	});
 		},0)
 	}

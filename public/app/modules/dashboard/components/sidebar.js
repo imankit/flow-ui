@@ -16,7 +16,9 @@ class Sidebar extends React.Component {
 	render() {
 		return (
        		<div className="sidbarcomponent">
-	      
+	      			<div className="sidebarHeading">
+	      				<span className="headingComp">Components</span>
+	      			</div>
 	       			<ComponentPreview inputs={ 2 } outputs={ 1 } key={ 1 } id={ "itemPre"+ 1 }/>
 	       			<ComponentPreview inputs={ 2 } outputs={ 2 } key={ 2 } id={ "itemPre"+ 2 }/>
 	       			<ComponentPreview inputs={ 1 } outputs={ 1 } key={ 3 } id={ "itemPre"+ 3 }/>
