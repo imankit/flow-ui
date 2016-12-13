@@ -16,12 +16,14 @@ before_install:
 install:
 - webpack --progress
 - docker build -t cloudboost/flow-ui:latest .
+- docker build -t cloudboost/flow-ui:2.0.$TRAVIS_BUILD_NUMBER .
 after_success:
 #Deploy. 
 #Docker Login
 - docker login --username $DOCKERUSERNAME --password $DOCKERPASSWORD --email $DOCKEREMAIL
 #Push docker images.
 - docker push cloudboost/flow-ui:latest
+- docker push cloudboost/flow-ui:2.0.$TRAVIS_BUILD_NUMBER .
 # Make sure SDK is downloaded - cache once it's working
 - curl https://sdk.cloud.google.com | bash;
 # List the SDK contents to ensure it's downloaded
