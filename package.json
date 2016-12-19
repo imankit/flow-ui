@@ -19,6 +19,7 @@
     "babel-preset-react": "^6.16.0",
     "bcrypt-nodejs": "0.0.3",
     "history": "^4.3.0",
+    "jsplumb": "^2.2.6",
     "koa": "^1.2.4",
     "material-ui": "^0.16.1",
     "mobx": "^2.6.0",
@@ -31,10 +32,10 @@
     "react-dom": "~15.2.1",
     "react-router": "^2.8.1",
     "react-tap-event-plugin": "^1.0.0",
+    "react-treeview": "^0.4.6",
     "set": "^1.1.1",
     "webpack": "~1.13.1",
-    "webpack-dev-server": "~1.14.1",
-    "jsplumb": "^2.2.6"
+    "webpack-dev-server": "~1.14.1"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",

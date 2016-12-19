@@ -3,6 +3,7 @@ import axios from 'axios'
 
 class Dashboard {
 	@observable components = []
+	@observable selectedComponent = {}
 
 	@computed get getComponents(){
 		if(this.components.length){
@@ -12,6 +13,23 @@ class Dashboard {
 
 	addComponent(data){
 		this.components.push(data)
+	}
+
+	selectComponent(compData){
+		this.selectedComponent = compData
+	}
+
+	deleteComponent(id){
+		this.components = this.components.filter(x => x.id != id)
+		this.selectedComponent = {}
+	}
+
+	editComponent(id,whichProp,value){
+		this.selectedComponent[whichProp] = value
+		this.components = this.components.map((x)=>{
+			if(x.id == id) x[whichProp] = value
+			return x
+		})
 	}
 
 }

@@ -11,18 +11,26 @@ body{
     height: 100%;
     background-color: #EFF1F5
 }
+.hide{
+    display: none;
+}
 .sidbarcomponent{
     height: 95%;
-    width:20%;
+    width:18%;
     float: left;
     background-color: white;
 }
 .componentcanvas{
     height: 95%;
-    width: 80%;
+    width: 65%;
     float: left;
     position: relative;
-    border: 1px dashed #BDB9B9;
+}
+.rightsidbarcomponent{
+    height: 95%;
+    width:17%;
+    float: left;
+    background-color: white;
 }
 .header{
     width: 100%;
@@ -60,12 +68,20 @@ body{
     float: left;
     margin-top: 13px;
     font-weight: bolder;
+    word-wrap: break-word;
 }
-.sidebarHeading{
+.sidebarHeadingright{
     width: 100%;
     height: 35px;
     border: 2px solid #EFF1F5;
     border-right: 0;
+    margin-bottom: 10px;
+}
+.sidebarHeadingleft{
+    width: 100%;
+    height: 35px;
+    border: 2px solid #EFF1F5;
+    border-left: 0;
     margin-bottom: 10px;
 }
 .headingComp{
@@ -74,4 +90,130 @@ body{
     margin-left: 7px;
     font-weight: bold;
     color: #545252;
+}
+.rightbarheadinglight{
+        float: left;
+    margin-top: 4px;
+    margin-left: 3px;
+    color: #AFABAB;
+}
+.rightbarheadingdark{
+        float: left;
+    margin-top: 4px;
+    margin-left: 3px;
+}
+.rightbarcompnameheading{
+        float: left;
+    margin-top: 4px;
+    margin-left: 3px;
+}
+.cp{
+    cursor: pointer;
+}
+.inputtextdiv{
+        padding: 10px;
+}
+.nameinputtext{
+       float: left;
+    color: #8B9098;
+    font-size: 14px;
+    margin-top: 1px;
+    width: 25%;
+}
+.inputCompText{
+        float: right;
+    margin-top: -5px;
+    border-radius: 2px;
+    border: 1px solid rgba(138, 132, 132, 0.5);
+    padding: 5px;
+     width: 75%;
+}
+.treeViewContainer{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+.tree-view_item {
+    height: 30px;
+    padding: 5px;
+    background-color: #6997F2;
+    width: 96%;
+    margin-left: 2%;
+    color: white;
+    border-radius: 3px;
+}
+.treechilddiv{
+        padding: 5px;
+    color: #585454;
+    width: 95%;
+    cursor: pointer;
+    padding-left: 20px;
+    float: left;
+}
+.treechilddiv:hover{
+    background-color: #F0F2F7;
+}
+.ComponentsDivContainer{
+    width: 100%;
+    height: 62%;
+    overflow-y: auto;
+}
+.treecontainerdiv{
+    height: 30%
+}
+.topbarcanvas{
+    width: 100%;
+    background-color: white;
+    height: 35px;
+    border: 2px solid #EFF1F5;
+}
+.canvascomparea{
+    width: 100%;
+    height: 96%;
+    border: 1px dashed #BDB9B9;
+}
+.zoomselector{
+    height: 100%;
+    float: right;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.zoompopover{
+    height: 160px;
+    width: 95px;
+}
+.zoomoptionspans{
+        width: 100%;
+    height: 31px;
+    float: left;
+    padding: 8px;
+    padding-left: 8px;
+    margin-top: 0px;
+    color: #828181;
+    font-weight: bold;
+    cursor: pointer;
+}
+.zoomoptionspans:hover{
+    background-color: #F5F5F5
+}
+.platforminfo{
+    height: 100%;
+    float: left;
+    margin-top: 5px;
+    margin-left: 8px;
+}
+.platforminfotype{
+        color: #908989;
+    margin-left: 8px;
+}
+.deletecomp{
+        float: right;
+    margin-right: 3px;
+    margin-top: 2px;
+    font-size: 15px;
+    color: rgba(204, 41, 41, 0.81);
+}
+.lefttreecompname{
+    width: 80%;
+    float: left;
 }

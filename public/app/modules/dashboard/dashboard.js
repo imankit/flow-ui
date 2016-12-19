@@ -3,7 +3,7 @@ import { Route, IndexRoute } from 'react-router'
 import { observer,inject } from "mobx-react"
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
-import Dashboard_Main from './components/dashboardMain.js'
+import Dashboard_Main from './common/dashboardMain.js'
 
 @inject("DashboardStore") @observer
 class Dashboard extends React.Component {
