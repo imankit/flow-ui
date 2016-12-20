@@ -21,7 +21,7 @@ class Systems extends React.Component {
 	}
 	deleteSystem(id,e){
 		e.stopPropagation()
-		// this.props.SystemStore.deleteSystem(id)
+		this.props.SystemStore.deleteSystem(id)
 	}
 	redirectToCanvas(){
 		this.context.router.push('/dash');
