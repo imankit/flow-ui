@@ -7,14 +7,17 @@ injectTapEventPlugin();
 
 //modules
 import Dashboard_Routes from './modules/dashboard/dashboard.js'
+import Landing_Routes from './modules/landing/landing.js'
 
 //stores
 import Dashboard from './stores/dashboard.js'
+import System_Store from './stores/system.js'
 
 ReactDOM.render((
-	<Provider DashboardStore = { Dashboard }>
+	<Provider DashboardStore = { Dashboard } SystemStore = { System_Store }>
 		<Router history={hashHistory}>
 			{ Dashboard_Routes }
+			{ Landing_Routes }
 		</Router>
 	</Provider>
 ), document.getElementById('app'));

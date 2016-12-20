@@ -217,3 +217,305 @@ body{
     width: 80%;
     float: left;
 }
+.landingContent{
+    width: 100%;
+    height: 95%;
+    float: left;
+    border-top: 1px solid #D2D2CE;
+}
+.projectsheadingrow{
+        height: 50px;
+    float: left;
+    margin-top: 80px;
+    padding: 130px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.headingproject{
+        float: left;
+    font-size: 40px;
+    font-family: serif;
+}
+.buttonaddsystem{
+        float: right;
+    height: 40px;
+    padding: 12px 18px !important;
+    letter-spacing: 0px !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    text-transform: none !important;
+    background-color: #4dd87b;
+    border: none;
+    transition: 0.1s linear;
+    -webkit-transition: 0.1s linear;
+    -moz-transition: 0.1s linear;
+    color: white;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+    padding-top: 10px !important;
+}
+
+.projectscontentrow{
+    float: left;
+    margin-top: 80px;
+    padding: 130px;
+    padding-top: 30px;
+    padding-bottom: 0;
+    min-height: 400px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+.projectcardcontainer{
+    height: 200px;
+    position: relative;
+    cursor: pointer;
+    background-color: white;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    transition: box-shadow 140ms linear;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 0;
+}
+.projectcardcontainer:hover{
+    box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.2);
+}
+.topprojecticon{
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    top: -29px;
+}
+.projecticonimage{
+        width: 60px;
+    height: 60px;
+    float: left;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.newsystemtitle{
+        font-weight: normal !important;
+    font-size: 30px !important;
+    font-family: serif;
+}
+.newsystemrootclass{
+    height: 400px;
+}
+.newsystemname{
+    display: block;
+    width: 100%;
+    height: 48px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #dadde2;
+    border-radius: 2px !important;
+    box-shadow: none;
+    margin-top: 15px;
+}
+.newsystemname:focus{
+        border: 1px solid rgba(19, 69, 113, 0.55);
+}
+.contentclassaddsystme{
+        width: 650px !important;
+}
+.systemtypedivselector{
+    width: 137px;
+    height: 115px;
+    border-radius: 4px;
+    display: inline-block;
+    border: 2px solid rgba(188, 202, 210, 0.4);
+    margin-right: 15px;
+    margin-top: 15px;
+    transition: border 140ms linear;
+    cursor: pointer;
+}
+.systemtypedivselector:hover{
+    border: 2px solid rgb(15, 176, 204);
+}
+.selecttypeborder{
+    border: 2px solid rgb(15, 176, 204);
+}
+.systemtypetext{
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    float: left;
+    margin-top: 42px;
+}
+.addsystemtypeselectspan{
+    width: 100%;
+    float: left;
+    margin-top: 20px;
+    color: #000000;
+    font-family: serif;
+    font-size: 17px;
+}
+.systemmodalbuttonscancel{
+    float: right;
+    font-size: 14px !important;
+    border-radius: 4px !important;
+    padding: 6px 24px !important;
+    letter-spacing: 0.02em !important;
+    min-height: 40px !important;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15), 0px 0px 1px rgba(0, 0, 0, 0.1) !important;
+    font-weight: bold !important;
+    border: none;
+    color: #374155;
+    background-color: #fff;
+    text-align: center;
+    padding-top: 9px !important;
+    margin-right: 7px;
+    cursor: pointer;
+}
+.systemmodalbuttonscreate{
+    float: right;
+    font-size: 14px !important;
+    border-radius: 4px !important;
+    padding: 6px 24px !important;
+    color: #FFF;
+    background-color: #4F92FF;
+    border-color: #4274C9;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.02em !important;
+    min-height: 40px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+    font-weight: bold;
+    letter-spacing: 1px;
+    border: none;
+    padding-top: 9px !important;
+    cursor: pointer;
+}
+.systemnewbtncontainer{
+        float: left;
+    width: 100%;
+    margin-top: 40px;
+}
+.midprojectdiv{
+    width: 100%;
+    height: 70%;
+}
+.bottomprojectdiv{
+        width: 100%;
+    height: 30%;
+    border-top: 1px solid rgba(216, 215, 215, 0.51);
+}
+.cardname{
+    float: left;
+    margin: 0;
+    padding: 50px 0 10px 0;
+    font-size: 20px;
+    font-weight: normal;
+    text-align: center;
+    width: 100%;
+}
+.cardtype{
+        position: absolute;
+    right: 8px;
+    color: #d2d7df;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    top: 3px;
+}
+.deletesystemicon{
+    font-size: 28px;
+    background-size: 32px;
+    transition: color 0.1s ease, opacity 0.1s ease;
+    margin-right: auto;
+    margin-left: auto;
+    opacity: 0.2;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 10px;
+    margin-top: 8px;
+}
+.deletesystemicon:hover{
+    color: rgba(253, 15, 15, 0.62);
+    opacity: 1;
+}
+.cardAPItype{
+    width: 40%;
+    float: left;
+    padding-left: 15px;
+    color: black;
+    font-weight: bold;
+    margin-top: 25px;
+}
+.cardAPIpath{
+    max-width: 60%;
+    overflow-x: hidden;
+    float: left;
+    padding-left: 15px;
+    color: black;
+    font-weight: bold;
+    min-width: 25%;
+    margin-top: 25px;
+}
+.cardAPItypevalue{
+   color: #9E9E9E;
+    font-size: 15px;
+    float: left;
+    margin-top: -1px;
+    margin-left: 10px;
+}
+.cardAPIpathvalue{
+    color: #9E9E9E;
+    font-size: 17px;
+    float: left;
+    margin-left: 5px;
+    margin-top: -2px;
+}
+.editicontypepath{
+    float: right;
+    font-size: 13px;
+    margin-top: 3px;
+    margin-left: 4px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.APItypeandpathtext{
+    float: left;
+}
+.popupoptionsapitype{
+    float: left;
+    width: 100%;
+    height: 29px;
+    padding-left: 7px;
+    cursor: pointer;
+}
+.popupoptionsapitype:hover{
+    background-color: #F7F7F7;
+}
+.popapitype{
+        height: 131px;
+    width: 89px;
+    padding-top: 7px;
+}
+.poppath{
+    height: 30px;
+    width: 205px;
+}
+.inputpath{
+        width: 200px;
+    float: left;
+    margin-top: 3px;
+    margin-left: 2px;
+    border: 1px solid #E4E4E4;
+    border-radius: 3px;
+}

@@ -3,14 +3,12 @@ import { Route, IndexRoute } from 'react-router'
 import { observer,inject } from "mobx-react"
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
-import Dashboard_Main from './common/dashboardMain.js'
+import Landing_Main from './common/landingMain.js'
 
 @inject("DashboardStore") @observer
-class Dashboard extends React.Component {
+class Landing extends React.Component {
 	componentWillMount() {
-		$(window).resize(function(){
-		  jsPlumb.repaintEverything();
-		});
+		
 	}
 	render() {
 		return (
@@ -23,7 +21,7 @@ class Dashboard extends React.Component {
 	}
 }
 export default(
-	<Route path="/dash" component={Dashboard}>
-    	<IndexRoute component={Dashboard_Main} />
+	<Route path="/" component={Landing}>
+    	<IndexRoute component={Landing_Main} />
     </Route>
 )
