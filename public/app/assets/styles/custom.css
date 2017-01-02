@@ -1,5 +1,6 @@
 body{
     height: 100%;
+    background-color: #EFF1F5
 }
 #app{
     height: 100%;
@@ -9,7 +10,7 @@ body{
 }
 .main{
     height: 100%;
-    background-color: #EFF1F5
+    
 }
 .hide{
     display: none;
@@ -47,10 +48,14 @@ body{
 }
 .item {
     position: absolute;
-    height:80px; width: 80px;
+    height: 80px;
+    width: 80px;
     border: 2px solid black;
     cursor: pointer;
     border-radius: 3px;
+    background-color: white;
+    z-index: 1000;
+    opacity: 0.9;
 }
 .itemPreview{
     height: 84px;
@@ -265,18 +270,19 @@ body{
     overflow-y: auto;
 }
 .projectcardcontainer{
-    height: 200px;
+        height: 50px;
     position: relative;
-    cursor: pointer;
     background-color: white;
     float: left;
     margin-right: 30px;
-    margin-bottom: 30px;
     box-sizing: border-box;
     transition: box-shadow 140ms linear;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
+    border-radius: 3px;
     padding: 0;
+    margin-top: 10px;
+    width: 400px !important;
+    margin-bottom: 10px;
 }
 .projectcardcontainer:hover{
     box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.2);
@@ -295,11 +301,9 @@ body{
     top: -29px;
 }
 .projecticonimage{
-        width: 60px;
+    width: 60px;
     height: 60px;
-    float: left;
-    margin-left: 5px;
-    margin-top: 5px;
+    margin-right: 10px;
 }
 .newsystemtitle{
         font-weight: normal !important;
@@ -404,10 +408,7 @@ body{
     width: 100%;
     margin-top: 40px;
 }
-.midprojectdiv{
-    width: 100%;
-    height: 70%;
-}
+
 .bottomprojectdiv{
         width: 100%;
     height: 30%;
@@ -518,4 +519,127 @@ body{
     margin-left: 2px;
     border: 1px solid #E4E4E4;
     border-radius: 3px;
+}
+.allcontentrows{
+        min-height: 50px;
+    float: left;
+    margin-top: 40px;
+    padding: 130px;
+    padding-top: 0;
+    padding-bottom: 0;
+    max-height: 400px;
+}
+.contentheadingcommon{
+        color: #504E4E;
+    font-family: serif;
+}
+.cardnameAPI{
+        float: left;
+    font-size: 13px;
+    font-weight: normal;
+    text-align: center;
+    width: 100%;
+    color: #7D7A7A;
+}
+.APItype{
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    float: left;
+    color: #716F6F;
+    margin-top: -5px;
+}
+.APIpath{
+    margin-left: 13px;
+    font-size: 17px;
+    float: left;
+    margin-top: -2px;
+    color: #676262;
+    font-family: serif;
+}
+.topprojectdivAPI{
+        width: 50%;
+    height: 29%;
+    margin-left: auto;
+    margin-right: auto;  
+}
+.midprojectdivAPI{
+        width: 90%;
+    height: 70%;
+    float: left;
+}
+.threedots{
+        float: right;
+    font-size: 27px !important;
+    margin-right: 8px;
+    margin-top: -5px;
+    cursor: pointer;
+    color: #6F6C6C;
+}
+.linkdash{
+    float: right;
+    font-size: 15px !important;
+    margin-right: 11px;
+    margin-top: 2px;
+    cursor: pointer;
+    color: #6F6C6C;
+}
+.rightprojectdiv{
+    float: left;
+    width: 10%;
+    height: 70%;
+}
+.settingmenu{
+        min-height: 131px;
+    width: 110px;
+    padding-top: 9px;
+}
+.settingmenuoption{
+        padding: 3px;
+    float: left;
+    width: 100%;
+    height: 29px;
+    padding-left: 7px;
+    cursor: pointer;
+}
+.settingmenuoption:hover{
+    background-color: #F7F7F7;
+}
+.midprojectdivworker{
+        width: 90%;
+    height: 100%;
+    float: left;
+}
+.rightprojectdivworker{
+        float: left;
+    width: 10%;
+    height: 70%;
+    margin-top: 17px;
+}
+.workername{
+    font-size: 20px;
+    color: #3C3B3B;
+    padding-left: 10px;
+    display: block;
+}
+.workerduration{
+   float: left;
+    padding-left: 1px;
+    color: #757373;
+}
+.workerstatuscriclegreen{
+        float: left;
+    margin-top: 14px;
+    margin-left: 10px;
+    margin-right: 15px;
+    font-size: 22px !important;
+    color: rgba(0, 128, 0, 0.56);
+}
+.workerstatuscriclered{
+        float: left;
+    margin-top: 14px;
+    margin-left: 10px;
+    margin-right: 15px;
+    font-size: 22px !important;
+    color: rgba(255, 0, 0, 0.71);
 }

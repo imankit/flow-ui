@@ -23,6 +23,18 @@ class ComponentPreview extends React.Component {
 			    	anchors:[[1,pos,0,0]]
 				},config.commonSource);
 			}
+
+			$('.itemPreview').draggable({
+				helper: 'clone',
+				revert: 'invalid',
+				appendTo: 'body'
+			})
+			$('.canvascomparea').droppable({
+				accept: '.itemPreview',
+				drop: function(event, ui) {
+					this.addComponent()
+				}.bind(this)
+			})
 		},0)
 	}
 	addComponent(){
