@@ -7,8 +7,19 @@ import Landing_Main from './common/landingMain.js'
 
 @inject("DashboardStore") @observer
 class Landing extends React.Component {
-	componentWillMount() {
-		
+	componentDidMount() {
+		// var parser = require('fbp');
+		// // Some FBP syntax code
+		// var fbpData = "'6' -> MULTIPLICAND Multiply(math/Multiply)'7' -> MULTIPLIER Multiply Multiply PRODUCT -> IN Display(core/Output)";
+		// // Parse into a Graph definition JSON object
+		// var graphDefinition = parser.parse(fbpData, {caseSensitive: true});
+
+		// var noflo = require('noflo/lib/Graph')
+		// console.log(graphDefinition)
+		// noflo.loadJSON(graphDefinition, function (err, network) {
+		//   console.log('Network is now running!');
+		//   console.log('ntw',network.toDOT())
+		// });
 	}
 	render() {
 		return (

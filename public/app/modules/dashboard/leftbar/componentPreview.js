@@ -42,7 +42,7 @@ class ComponentPreview extends React.Component {
 		this.props.DashboardStore.addComponent({
 			inputs:this.props.inputs,
 			outputs:this.props.outputs,
-			text:'Sample Comp.',
+			text:this.props.name,
 			id:id
 		})
 	}
@@ -50,7 +50,7 @@ class ComponentPreview extends React.Component {
 		return (
    			<div className="componentselectorContainer">
    				<div id={this.props.id} className="itemPreview" onDoubleClick={ this.addComponent.bind(this) }>
-   					<span className="itemPreviewText">Sample Comp.</span>
+   					<span className="itemPreviewText">{this.props.name}</span>
    				</div>
    			</div>
 		);

@@ -643,3 +643,50 @@ body{
     font-size: 22px !important;
     color: rgba(255, 0, 0, 0.71);
 }
+.npmicon{
+        float: right;
+    width: 45px;
+    height: 34px;
+    cursor: pointer;
+    margin-right: 8px;
+    margin-top: -1px;
+}
+.npmewbtncontainer{
+    float: left;
+    width: 100%;
+    bottom: 10px;
+    position: absolute;
+    left: -10px;
+}
+.packagelistcontainer{
+    height: 235px;
+    overflow-y: auto;
+    float: left;
+    width: 100%;
+}
+.npmpackagebox{
+    width: 100px;
+    height: 80px;
+    border-radius: 4px;
+    display: inline-block;
+    border: 2px solid rgba(188, 202, 210, 0.4);
+    margin-right: 15px;
+    margin-top: 15px;
+    transition: border 140ms linear;
+    cursor: pointer;
+    position: relative;
+}
+.npmpackagebox:hover{
+    border: 2px solid rgb(15, 176, 204);
+}
+.npmtypetext{
+        color: black;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    width: 100%;
+    float: left;
+    position: absolute;
+    top: 15%;
+    word-wrap: break-word;
+}

@@ -8,8 +8,11 @@ import Dashboard_Main from './common/dashboardMain.js'
 @inject("DashboardStore") @observer
 class Dashboard extends React.Component {
 	componentWillMount() {
+
+		this.props.DashboardStore.getAllPackages()
+
 		$(window).resize(function(){
-		  jsPlumb.repaintEverything();
+			jsPlumb.repaintEverything();
 		});
 	}
 	render() {
