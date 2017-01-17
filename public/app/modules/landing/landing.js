@@ -5,9 +5,10 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 import Landing_Main from './common/landingMain.js'
 
-@inject("DashboardStore") @observer
+@inject("SystemStore","DashboardStore") @observer
 class Landing extends React.Component {
-	componentDidMount() {
+	componentWillMount() {
+		this.props.SystemStore.getAllSystems()
 		// var parser = require('fbp');
 		// // Some FBP syntax code
 		// var fbpData = "'6' -> MULTIPLICAND Multiply(math/Multiply)'7' -> MULTIPLIER Multiply Multiply PRODUCT -> IN Display(core/Output)";

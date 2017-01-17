@@ -2,7 +2,7 @@ import React from 'react';
 import { observer,inject } from "mobx-react"
 import Dialog from 'material-ui/Dialog'
 
-@inject("DashboardStore") @observer
+@inject("DashboardStore","SystemStore") @observer
 class NPM extends React.Component {
 	constructor(){
 		super()
@@ -35,12 +35,20 @@ class NPM extends React.Component {
 		})
 	}
 	addComponent(comp){
-		this.props.DashboardStore.addPreviewComponent(comp)
-		this.setState({
+		let graphId = this.props.SystemStore.selectedSystem._id
+		this.props.SystemStore.addPreviewComponent(comp,graphId).then((data)=>{
+			this.setState({
 				open:false,
 				components:[],
 				componentView:false
 			})
+		},(err)=>{
+			this.setState({
+				open:false,
+				components:[],
+				componentView:false
+			})
+		})
 	}
 	togglePackages(what){
 		this.setState({

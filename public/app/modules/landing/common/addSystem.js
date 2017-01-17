@@ -30,7 +30,6 @@ class AddSystem extends React.Component {
 		if(this.state.selectedSystem == 1) type = "TRIGGER"
 		if(this.state.selectedSystem == 2) type = "WORKER"
 		let postObject = {
-			id:Math.random().toString(36).substring(7),
 			type:type,
 			name:this.state.name,
 			description:this.state.description

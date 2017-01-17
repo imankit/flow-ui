@@ -22,9 +22,10 @@ class APISystems extends React.Component {
 	}
 	deleteSystem(id,e){
 		e.stopPropagation()
-		this.props.SystemStore.deleteSystem(id)
+		this.props.SystemStore.deleteSystem({id:id})
 	}
 	redirectToCanvas(){
+		this.props.SystemStore.selectSystem(this.props.systemData)
 		this.context.router.push('/dash');
 	}
 	handleTouchTap(which,event){
@@ -38,11 +39,11 @@ class APISystems extends React.Component {
 		this.setState(this.state)
 	}
 	render() {
-		let { name,type,id,description } = this.props.systemData
+		let { _id,type,graph } = this.props.systemData
 		return (
 			<div className="col-lg-3 projectcardcontainer">
 				<div className="topprojectdivAPI">
-					<span className="cardnameAPI">{ name }</span>
+					<span className="cardnameAPI">{ graph.name }</span>
 				</div>
 				<div className="midprojectdivAPI">
 					<span className="APItype">{ this.state.type }</span>
@@ -64,7 +65,7 @@ class APISystems extends React.Component {
 					<span className="settingmenuoption" onClick={ this.redirectToCanvas.bind(this) } >View Canvas</span>
 					<span className="settingmenuoption" >Edit</span>
 					<span className="settingmenuoption" >Logs</span>
-					<span className="settingmenuoption" onClick={ this.deleteSystem.bind(this,id) } >Delete</span>
+					<span className="settingmenuoption" onClick={ this.deleteSystem.bind(this,_id) } >Delete</span>
 				</Popover>
 			</div>
 		);

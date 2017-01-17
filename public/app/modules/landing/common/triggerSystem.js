@@ -20,9 +20,10 @@ class TriggerSystems extends React.Component {
 	}
 	deleteSystem(id,e){
 		e.stopPropagation()
-		this.props.SystemStore.deleteSystem(id)
+		this.props.SystemStore.deleteSystem({id:id})
 	}
 	redirectToCanvas(){
+		this.props.SystemStore.selectSystem(this.props.systemData)
 		this.context.router.push('/dash');
 	}
 	handleTouchTap(which,event){
@@ -36,11 +37,11 @@ class TriggerSystems extends React.Component {
 		this.setState(this.state)
 	}
 	render() {
-		let { name,type,id,description } = this.props.systemData
+		let { _id,type,graph } = this.props.systemData
 		return (
 			<div className="col-lg-3 projectcardcontainer">
 				<div className="midprojectdivworker">
-					<span className="workername">{ name }</span>
+					<span className="workername">{ graph.name }</span>
 				</div>
 				<div className="rightprojectdivworker">
 					<i className="fa fa-ellipsis-v threedots" aria-hidden="true" onTouchTap={this.handleTouchTap.bind(this,'openSetting')}></i>
@@ -58,7 +59,7 @@ class TriggerSystems extends React.Component {
 					<span className="settingmenuoption" onClick={ this.redirectToCanvas.bind(this) } >View Canvas</span>
 					<span className="settingmenuoption" >Edit</span>
 					<span className="settingmenuoption" >Logs</span>
-					<span className="settingmenuoption" onClick={ this.deleteSystem.bind(this,id) } >Delete</span>
+					<span className="settingmenuoption" onClick={ this.deleteSystem.bind(this,_id) } >Delete</span>
 				</Popover>
 			</div>
 		);

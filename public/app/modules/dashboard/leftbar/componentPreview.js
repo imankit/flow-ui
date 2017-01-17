@@ -10,6 +10,7 @@ class ComponentPreview extends React.Component {
 		}
 	}
 	componentDidMount(){
+		var _self = this
 		setTimeout(()=>{
 			for(let k=1;k<=this.props.inputs;k++){
 				let pos = 0.2*( k )
@@ -32,8 +33,8 @@ class ComponentPreview extends React.Component {
 			$('.canvascomparea').droppable({
 				accept: '.itemPreview',
 				drop: function(event, ui) {
-					this.addComponent()
-				}.bind(this)
+					_self.addComponent()
+				}
 			})
 		},0)
 	}

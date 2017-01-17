@@ -1,7 +1,8 @@
 var mongoose = require('mongoose'); 
 
 var graph = mongoose.Schema({
-    graph           : String,
+    graph           : Object,
+    type            : Object,
     description     : String,
     created_on      : Date,
     components		: []

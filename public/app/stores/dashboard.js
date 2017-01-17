@@ -2,7 +2,6 @@ import { observable,computed } from 'mobx'
 import axios from 'axios'
 
 class Dashboard {
-	@observable previewComponents = []
 	@observable components = []
 	@observable packages = []
 	@observable selectedComponent = {}
@@ -36,10 +35,6 @@ class Dashboard {
 		this.components.push(data)
 	}
 
-	addPreviewComponent(data){
-		this.previewComponents.push(data)
-	}
-
 	addPackage(data){
 		this.packages.push(data)
 	}
@@ -63,6 +58,6 @@ class Dashboard {
 
 }
 
-const store = window.store = new Dashboard()
+const store = new Dashboard()
 
 export default store

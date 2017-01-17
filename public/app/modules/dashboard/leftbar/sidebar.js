@@ -4,7 +4,7 @@ import ComponentPreview from './componentPreview'
 import LeftTree from './leftTree'
 import NPM from './npm'
 
-@inject("DashboardStore") @observer
+@inject("DashboardStore","SystemStore") @observer
 class Sidebar extends React.Component {
 	constructor(){
 		super()
@@ -15,10 +15,10 @@ class Sidebar extends React.Component {
 		 
 	}
 	render() {
-		let Components = this.props.DashboardStore.previewComponents
-		if(Components){
-			Components = Components.map((x,i)=>{
-				return <ComponentPreview inputs={ 2 } outputs={ 1 } key={ i } id={ "itemPre"+ i } name={ x }/>
+		let components = this.props.SystemStore.selectedSystem.components
+		if(components){
+			components = components.map((x,i)=>{
+				return <ComponentPreview inputs={ 2 } outputs={ 2 } key={ i } id={ "itemPre"+ i } name={ x }/>
 			})
 		}
 		return (
@@ -29,7 +29,7 @@ class Sidebar extends React.Component {
 	      				<NPM/>
 	      			</div>
 	      			<div className="ComponentsDivContainer">
-	      				{ Components }
+	      				{ components }
 	       			</div>
 	       		
        		</div>

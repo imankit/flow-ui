@@ -22,9 +22,10 @@ class WorkerSystems extends React.Component {
 	}
 	deleteSystem(id,e){
 		e.stopPropagation()
-		this.props.SystemStore.deleteSystem(id)
+		this.props.SystemStore.deleteSystem({id:id})
 	}
 	redirectToCanvas(){
+		this.props.SystemStore.selectSystem(this.props.systemData)
 		this.context.router.push('/dash');
 	}
 	handleTouchTap(which,event){
@@ -41,12 +42,12 @@ class WorkerSystems extends React.Component {
 		this.setState({status:statusVal})
 	}
 	render() {
-		let { name,type,id,description } = this.props.systemData
+		let { _id,type,graph } = this.props.systemData
 		return (
 			<div className="col-lg-3 projectcardcontainer">
 				<div className="midprojectdivworker">
 					<i className={ this.state.status ? "fa fa-circle workerstatuscriclegreen" : "fa fa-circle workerstatuscriclered" } aria-hidden="true"></i>
-					<span className="workername">{ name }</span>
+					<span className="workername">{ graph.name }</span>
 					<span className="workerduration">{ this.state.duration }</span>
 				</div>
 				<div className="rightprojectdivworker">
@@ -66,7 +67,7 @@ class WorkerSystems extends React.Component {
 					<span className="settingmenuoption" onClick={ this.redirectToCanvas.bind(this) } >View Canvas</span>
 					<span className="settingmenuoption" >Edit</span>
 					<span className="settingmenuoption" >Logs</span>
-					<span className="settingmenuoption" onClick={ this.deleteSystem.bind(this,id) } >Delete</span>
+					<span className="settingmenuoption" onClick={ this.deleteSystem.bind(this,_id) } >Delete</span>
 				</Popover>
 			</div>
 		);

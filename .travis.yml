@@ -38,4 +38,4 @@ after_success:
 #Install Kubectl
 - gcloud components install kubectl
 - gcloud container clusters get-credentials $GOOGLECLUSTERNAME --zone $GOOGLEZONE --project $GOOGLEPROJECT
-- kubectl rolling-update cloudboost-flow --image=cloudboost/flow-ui:latest --image-pull-policy=Always
+- kubectl rolling-update cloudboost-flow-ui --image=cloudboost/flow-ui:latest --image-pull-policy=Always

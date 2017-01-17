@@ -26,17 +26,17 @@ class LandingMain extends React.Component {
 		let workerSystems = []
 		if(this.props.SystemStore.getSystems){
 			apiSystems = this.props.SystemStore.getSystems
-			.filter(x => x.type == "API")
+			.filter(x => x.type.type == "API")
 			.map((x,i)=>{
-				return <API key={ i } systemData = { x } />
+				return <API key={ i } systemData = { x }/>
 			})
 			triggerSystems = this.props.SystemStore.getSystems
-			.filter(x => x.type == "TRIGGER")
+			.filter(x => x.type.type == "TRIGGER")
 			.map((x,i)=>{
 				return <Trigger key={ i } systemData = { x } />
 			})
 			workerSystems = this.props.SystemStore.getSystems
-			.filter(x => x.type == "WORKER")
+			.filter(x => x.type.type == "WORKER")
 			.map((x,i)=>{
 				return <Worker key={ i } systemData = { x } />
 			})

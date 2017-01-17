@@ -5,15 +5,24 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 import Dashboard_Main from './common/dashboardMain.js'
 
-@inject("DashboardStore") @observer
+@inject("DashboardStore","SystemStore") @observer
 class Dashboard extends React.Component {
 	componentWillMount() {
 
-		this.props.DashboardStore.getAllPackages()
+		if(this.props.SystemStore.selectedSystem._id){
+			this.props.DashboardStore.getAllPackages()
 
-		$(window).resize(function(){
-			jsPlumb.repaintEverything();
-		});
+			$(window).resize(function(){
+				jsPlumb.repaintEverything();
+			});
+		} else {
+			this.context.router.push('/')
+		}
+	}
+	static get contextTypes() {
+		return {
+	  		router: React.PropTypes.object.isRequired,
+		}
 	}
 	render() {
 		return (
