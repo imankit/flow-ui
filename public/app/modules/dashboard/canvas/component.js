@@ -31,23 +31,37 @@ class Component extends React.Component {
 	mountJSPlumbComp(props){
 		setTimeout(()=>{
 			jsPlumb.ready(() => {
-				for(let k=1;k<=props.data.inputs;k++){
+				// k = number of inputs/outputs
+				for(let k=1;k<=2;k++){
 					let pos = 0.2*( k )
 					this.state.endpoints.push(
 						jsPlumb.addEndpoint(props.data.id, {
 					    	anchors:[[0,pos,0,0]]
-						},config.commonEnd)
+						},Object.assign(config.commonEnd,{test:"test"}))
 					)
 				}
-				for(let k=1;k<=props.data.outputs;k++){
+				for(let k=1;k<=2;k++){
 					let pos = 0.2*( k )
 					this.state.endpoints.push(
 						jsPlumb.addEndpoint(props.data.id, {
 					    	anchors:[[1,pos,0,0]]
-						},config.commonSource)
+						},Object.assign(config.commonSource,{test:"test"}))
 					)
 				}
 				this.setState(this.state)
+
+				jsPlumb.draggable($('#' + props.data.id), {
+					containment: '.canvascomparea',
+					stop: function (event, ui) {
+						var pos = ui.position;
+						console.log(pos)
+					}
+				});
+
+				jsPlumb.bind('connection',function(info,ev){
+				    console.log(info)
+				});
+
         	});
 		},0)
 	}
@@ -55,10 +69,10 @@ class Component extends React.Component {
 		this.props.DashboardStore.selectComponent(this.props.data)
 	}
 	render() {
-		let { id,text } = this.props.data
+		let { id,component } = this.props.data
 		return (
        		<div id={ id } className="item" onClick={ this.selectComponent.bind(this) }>
-				<span className="itemPreviewText">{ text }</span>
+				<span className="itemPreviewText">{ component }</span>
 			</div>
 		);
 	}

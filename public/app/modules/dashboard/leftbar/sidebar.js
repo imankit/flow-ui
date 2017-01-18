@@ -14,11 +14,19 @@ class Sidebar extends React.Component {
 	componentDidMount(){
 		 
 	}
+	getInputs(inps){
+		return Object.keys(inps).length
+	}
+	getOutputs(outs){
+		return Object.keys(outs).length
+	}
 	render() {
 		let components = this.props.SystemStore.selectedSystem.components
 		if(components){
 			components = components.map((x,i)=>{
-				return <ComponentPreview inputs={ 2 } outputs={ 2 } key={ i } id={ "itemPre"+ i } name={ x }/>
+				let inputs = this.getInputs(x.data.inPorts.ports)
+				let outputs = this.getOutputs(x.data.outPorts.ports)
+				return <ComponentPreview inputs={ inputs } outputs={ outputs } key={ i } id={ "itemPre"+ i } name={ x.name }/>
 			})
 		}
 		return (

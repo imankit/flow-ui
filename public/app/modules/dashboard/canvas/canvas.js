@@ -4,7 +4,7 @@ import config from '../config.js'
 import Component from './component.js'
 import TopBar from './topBar.js'
 
-@inject("DashboardStore") @observer
+@inject("DashboardStore","SystemStore") @observer
 class Canvas extends React.Component {
 	constructor(){
 		super()
@@ -22,17 +22,15 @@ class Canvas extends React.Component {
 				jsPlumb.bind('connection',function(info,ev){
 				    console.log(info)
 				});
-	            
-	        	jsPlumb.draggable($('.item'),{
-	        		containment:'.canvascomparea'
-	        	});
+
         	});
 		},0)
 	}
 	render() {
+		let graph = this.props.SystemStore.selectedSystem.graph
 		let components = []
-		if(this.props.DashboardStore.getComponents){
-			components = this.props.DashboardStore.getComponents.map((x,i)=>{
+		if(graph){
+			components = graph.nodes.map((x,i)=>{
 				return <Component data={ x } key={ i }/>
 			})
 		}

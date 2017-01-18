@@ -2,7 +2,7 @@ import React from 'react';
 import { observer,inject } from "mobx-react"
 import config from '../config.js'
 
-@inject("DashboardStore") @observer
+@inject("DashboardStore","SystemStore") @observer
 class ComponentPreview extends React.Component {
 	constructor(){
 		super()
@@ -33,18 +33,17 @@ class ComponentPreview extends React.Component {
 			$('.canvascomparea').droppable({
 				accept: '.itemPreview',
 				drop: function(event, ui) {
-					_self.addComponent()
+					// _self.addComponent()
 				}
 			})
 		},0)
 	}
 	addComponent(){
-		let id = Math.random().toString(36).substring(7)
-		this.props.DashboardStore.addComponent({
-			inputs:this.props.inputs,
-			outputs:this.props.outputs,
-			text:this.props.name,
-			id:id
+		let graphId = this.props.SystemStore.selectedSystem._id
+		this.props.SystemStore.addNode(this.props.name,graphId).then((data)=>{
+			
+		},(err)=>{
+			
 		})
 	}
 	render() {

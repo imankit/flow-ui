@@ -43,46 +43,77 @@ module.exports = function(){
 	})
 
 	router.put('/graph/component',function(req,res){
-		if(validate(req.body.name,"string"),validate(req.body.graphId,"string")){
+		if(validate(req.body.name,"string"),validate(req.body.graphId,"string"),validate(req.body.pkg,"string")){
 			Graph.findOne({_id:req.body.graphId},(err,graph)=>{
-				if(err) res.status(500).send('INTERNAL SERVER ERROR')
-				if(graph.components.indexOf(req.body.name) == -1){
-					graph.components.push(req.body.name)
+				try{
+					if(err) res.status(500).send('INTERNAL SERVER ERROR')
+					let uri = '../node_modules/'+req.body.pkg+'/components/'+req.body.name+'.coffee'
+					let comp = require(uri)
+					if(graph.components.length == graph.components.filter(comp => comp.name != req.body.name).length){
+						graph.components.push({
+							name:req.body.name,
+							data:comp.getComponent()
+						})
+					}
 					graph.markModified('components')
 					graph.save((err)=>{
 						res.status(200).send('ADDED')
 					})
-				} else res.status(400).send('COMPONENT ALREADY ADDED')
+				} catch(e){
+					res.status(400).send('NO PACKAGE/COMP FOUND')
+				}
 			})
 		} else res.status(400).send('INVALID REQUEST')
 	})
 
-	// router.get('/test/graph',function(req,res){
-	// 	//init graph
-	// 	let graph = noflo.graph.createGraph('test')
+	router.put('/graph/node',function(req,res){
+		if(validate(req.body.name,"string"),validate(req.body.graphId,"string")){
+			Graph.findOne({_id:req.body.graphId},(err,graph)=>{
+				try{
+					if(err) res.status(500).send('INTERNAL SERVER ERROR')
+					let nodeId = Math.random().toString(36).substring(7)
+					Object.setPrototypeOf(graph.graph,noflo.Graph.prototype)
+					graph.graph.addNode(nodeId,req.body.name)
+					graph.markModified('graph')
+					graph.save((err)=>{
+						res.status(200).send('NODE ADDED')
+					})
+				} catch(e){
+					console.log(e)
+					res.status(400).send('NO PACKAGE/COMP FOUND')
+				}
+			})
+		} else res.status(400).send('INVALID REQUEST')
+	})
 
-	// 	//Add comps
-	// 	graph.addNode("Read","ReadFile")
-	// 	graph.addNode("Display","Output")
+	router.get('/test/graph',function(req,res){
+		//init graph
+		let graph = noflo.graph.createGraph('test')
 
-	// 	//connect above comps
-	// 	graph.addEdge("Read",'out','Display','in')
+		//Add comps
+		graph.addNode("Read","ReadFile")
+		graph.addNode("Display","Output")
 
-	// 	//send initial data
-	// 	graph.addInitial("models/graph.js","Read","in")
-	// 	// graph.addInitial("testStrings","Display","in")
+		res.json(graph)
 
-	// 	//run
-	// 	let network = noflo.createNetwork(graph,function(err,nw){
-	// 		// nw.connect(function(err) {
-	//           // if (err) {
-	//           //   return done(err);
-	//           // }
-	//           // return nw.start();
-	//         // });
-	// 	})
+		//connect above comps
+		graph.addEdge("Read",'out','Display','in')
+
+		//send initial data
+		graph.addInitial("models/graph.js","Read","in")
+		// graph.addInitial("testStrings","Display","in")
+
+		//run
+		let network = noflo.createNetwork(graph,function(err,nw){
+			// nw.connect(function(err) {
+	          // if (err) {
+	          //   return done(err);
+	          // }
+	          // return nw.start();
+	        // });
+		})
 		
-	// })
+	})
 
 	router.get('/package/all',function(req,res){
 		flowPackages = Object.keys(PackageJSON.dependencies).filter( x => x.includes('noflo-') )

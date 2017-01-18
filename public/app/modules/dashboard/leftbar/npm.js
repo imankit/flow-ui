@@ -11,6 +11,7 @@ class NPM extends React.Component {
 			packageToSearch:'',
 			componentView:false,
 			components:[],
+			packageClicked:'',
 			selectedComponents:[]
 		}
 	}
@@ -28,7 +29,8 @@ class NPM extends React.Component {
 			let components = Object.keys(data.data.components)
 			this.setState({
 				components:components,
-				componentView:true
+				componentView:true,
+				packageClicked:comp
 			})
 		},(err)=>{
 
@@ -36,7 +38,7 @@ class NPM extends React.Component {
 	}
 	addComponent(comp){
 		let graphId = this.props.SystemStore.selectedSystem._id
-		this.props.SystemStore.addPreviewComponent(comp,graphId).then((data)=>{
+		this.props.SystemStore.addPreviewComponent(this.state.packageClicked,comp,graphId).then((data)=>{
 			this.setState({
 				open:false,
 				components:[],

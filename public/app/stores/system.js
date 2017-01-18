@@ -31,8 +31,20 @@ class System_Store {
 		this.selectedSystem = sysData
 	}
 
-	addPreviewComponent(name,graphId){
-		return  axios.put('/api/graph/component',{graphId:graphId,name:name}).then((res)=>{
+	addPreviewComponent(pkg,name,graphId){
+		return  axios.put('/api/graph/component',{graphId:graphId,name:name,pkg:pkg}).then((res)=>{
+					return  axios.get('/api/graph/all').then((res)=>{
+								this.systems = res.data
+								this.selectedSystem = this.systems.filter(x => x._id == graphId)[0]
+								return Promise.resolve(this.selectedSystem)
+							})
+				},(err)=>{
+					return Promise.reject(err)
+				})
+	}
+
+	addNode(name,graphId){
+		return  axios.put('/api/graph/node',{graphId:graphId,name:name}).then((res)=>{
 					return  axios.get('/api/graph/all').then((res)=>{
 								this.systems = res.data
 								this.selectedSystem = this.systems.filter(x => x._id == graphId)[0]
