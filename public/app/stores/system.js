@@ -55,6 +55,25 @@ class System_Store {
 				})
 	}
 
+	updateNodeMetadata(postObject){
+		// calls in background/no effext on ui
+		axios.put('/api/graph/node/metadata',postObject)
+	}
+
+	addEdge(postObject){
+		// calls in background/no effext on ui
+		axios.put('/api/graph/edge',postObject)
+	}
+
+	removeEdge(postObject){
+		// calls in background/no effext on ui
+		axios({
+			method: 'delete',
+			url: '/api/graph/edge',
+			data: postObject
+		})
+	}
+
 	deleteSystem(postObject){
 		
 		axios({

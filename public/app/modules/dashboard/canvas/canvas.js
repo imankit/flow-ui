@@ -13,25 +13,35 @@ class Canvas extends React.Component {
 		}
 	}
 	componentDidMount(){
-		
-	}
-	componentDidUpdate(){
 		setTimeout(()=>{
 			jsPlumb.ready(() => {
-				
-				jsPlumb.bind('connection',function(info,ev){
-				    console.log(info)
-				});
-
+				let graph = this.props.SystemStore.selectedSystem.graph
+				let edges = graph ? graph.edges : []
+				edges.map((edge)=>{
+					let fromUuid = edge.from.port + edge.from.node
+					let toUuid = edge.to.port + edge.to.node
+					jsPlumb.connect({ uuids:[fromUuid,toUuid] })
+				})
         	});
-		},0)
+		},500)
+	}
+	componentDidUpdate(){
+		
+	}
+	getComponentMetadata(currComp){
+		let metadata = {}
+		this.props.SystemStore.selectedSystem.components.map((x)=>{
+			if(currComp == x.name) metadata = x.data
+			return x
+		})
+		return metadata
 	}
 	render() {
-		let graph = this.props.SystemStore.selectedSystem.graph
+		let { graph,_id } = this.props.SystemStore.selectedSystem
 		let components = []
 		if(graph){
 			components = graph.nodes.map((x,i)=>{
-				return <Component data={ x } key={ i }/>
+				return <Component data={ x } key={ i } graphId={ _id } metadata={ this.getComponentMetadata(x.component) } />
 			})
 		}
 		return (

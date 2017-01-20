@@ -86,6 +86,63 @@ module.exports = function(){
 		} else res.status(400).send('INVALID REQUEST')
 	})
 
+	router.put('/graph/node/metadata',function(req,res){
+		if(validate(req.body.nodeId,"string"),validate(req.body.graphId,"string"),validate(req.body.metadata,"object")){
+			Graph.findOne({_id:req.body.graphId},(err,graph)=>{
+				try{
+					if(err) res.status(500).send('INTERNAL SERVER ERROR')
+					Object.setPrototypeOf(graph.graph,noflo.Graph.prototype)
+					graph.graph.setNodeMetadata(req.body.nodeId,req.body.metadata)
+					graph.markModified('graph')
+					graph.save((err)=>{
+						res.status(200).send('NODE METADATA UPDATED')
+					})
+				} catch(e){
+					console.log(e)
+					res.status(400).send('NO PACKAGE/COMP FOUND')
+				}
+			})
+		} else res.status(400).send('INVALID REQUEST')
+	})
+
+	router.put('/graph/edge',function(req,res){
+		if(validate(req.body.inNode,"string"),validate(req.body.outNode,"string"),validate(req.body.inPort,"string"),validate(req.body.outPort,"string"),validate(req.body.graphId,"string")){
+			Graph.findOne({_id:req.body.graphId},(err,graph)=>{
+				try{
+					if(err) res.status(500).send('INTERNAL SERVER ERROR')
+					Object.setPrototypeOf(graph.graph,noflo.Graph.prototype)
+					graph.graph.addEdge(req.body.inNode,req.body.inPort,req.body.outNode,req.body.outPort)
+					graph.markModified('graph')
+					graph.save((err)=>{
+						res.status(200).send('EDGE ADDED')
+					})
+				} catch(e){
+					console.log(e)
+					res.status(400).send('NO PACKAGE/COMP FOUND')
+				}
+			})
+		} else res.status(400).send('INVALID REQUEST')
+	})
+
+	router.delete('/graph/edge',function(req,res){
+		if(validate(req.body.inNode,"string"),validate(req.body.outNode,"string"),validate(req.body.inPort,"string"),validate(req.body.outPort,"string"),validate(req.body.graphId,"string")){
+			Graph.findOne({_id:req.body.graphId},(err,graph)=>{
+				try{
+					if(err) res.status(500).send('INTERNAL SERVER ERROR')
+					Object.setPrototypeOf(graph.graph,noflo.Graph.prototype)
+					graph.graph.removeEdge(req.body.inNode,req.body.inPort,req.body.outNode,req.body.outPort)
+					graph.markModified('graph')
+					graph.save((err)=>{
+						res.status(200).send('EDGE REMOVD')
+					})
+				} catch(e){
+					console.log(e)
+					res.status(400).send('NO PACKAGE/COMP FOUND')
+				}
+			})
+		} else res.status(400).send('INVALID REQUEST')
+	})
+
 	router.get('/test/graph',function(req,res){
 		//init graph
 		let graph = noflo.graph.createGraph('test')
@@ -113,6 +170,12 @@ module.exports = function(){
 	        // });
 		})
 		
+	})
+
+	router.get('/test/node',function(req,res){
+		let uri = '../node_modules/noflo-core/components/Copy.coffee'
+		let comp = require(uri)
+		res.json(comp.getComponent())
 	})
 
 	router.get('/package/all',function(req,res){

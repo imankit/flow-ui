@@ -10,11 +10,38 @@ class Dashboard extends React.Component {
 	componentWillMount() {
 
 		if(this.props.SystemStore.selectedSystem._id){
+
 			this.props.DashboardStore.getAllPackages()
 
+			// repiant endpoints/connections on resize
 			$(window).resize(function(){
 				jsPlumb.repaintEverything();
 			});
+
+			///event for connection detection
+			jsPlumb.bind('connection',function(info,ev){
+				let postObject = {
+					inNode:info.sourceId,
+					inPort:info.sourceEndpoint.portData.name,
+					outNode:info.targetId,
+					outPort:info.targetEndpoint.portData.name,
+					graphId:this.props.SystemStore.selectedSystem._id
+				}
+				this.props.SystemStore.addEdge(postObject)
+			}.bind(this));
+
+			///event for connection detach detection
+			jsPlumb.bind('connectionDetached',function(info,ev){
+				let postObject = {
+					inNode:info.sourceId,
+					inPort:info.sourceEndpoint.portData.name,
+					outNode:info.targetId,
+					outPort:info.targetEndpoint.portData.name,
+					graphId:this.props.SystemStore.selectedSystem._id
+				}
+				this.props.SystemStore.removeEdge(postObject)
+			}.bind(this));
+
 		} else {
 			this.context.router.push('/')
 		}
