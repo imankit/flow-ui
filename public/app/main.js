@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from 'mobx-react'
 import ReactDOM from 'react-dom'
-import { Router, Route, hashHistory, IndexRoute } from 'react-router'
+import { Router, Route, browserHistory, IndexRoute } from 'react-router'
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
@@ -15,7 +15,7 @@ import System_Store from './stores/system.js'
 
 ReactDOM.render((
 	<Provider DashboardStore = { Dashboard } SystemStore = { System_Store }>
-		<Router history={hashHistory}>
+		<Router history={browserHistory}>
 			{ Dashboard_Routes }
 			{ Landing_Routes }
 		</Router>
