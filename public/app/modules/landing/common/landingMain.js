@@ -4,6 +4,7 @@ import API from './apiSystem'
 import Worker from './workerSystem'
 import Trigger from './triggerSystem'
 import AddSystem from './addSystem'
+import HeaderMain from '../../header/headerMain.js'
 
 @inject("SystemStore") @observer
 class LandingMain extends React.Component {
@@ -43,9 +44,9 @@ class LandingMain extends React.Component {
 		}
 		return (
            <div className="main">
-           		<div className="header">
-
-           		</div>
+					 		<div>
+								<HeaderMain/>
+							</div>
            		<div className="landingContent">
 	           			<div className="col-lg-12 col-md-12 projectsheadingrow">
 	           				<span className="headingproject">App Name</span>

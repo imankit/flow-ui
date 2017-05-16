@@ -1,0 +1,1165 @@
+body {
+  height: 100%;
+  background-color: #EFF1F5;
+  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+#app {
+  height: 100%;
+}
+
+#wrapper {
+  height: 100%;
+}
+
+.main {
+  height: 100%;
+}
+
+.hide {
+  display: none;
+}
+
+.sidbarcomponent {
+  height: 95%;
+  width: 18%;
+  float: left;
+  background-color: white;
+}
+
+.componentcanvas {
+  height: 95%;
+  width: 65%;
+  float: left;
+  position: relative;
+}
+
+.rightsidbarcomponent {
+  height: 95%;
+  width: 17%;
+  float: left;
+  background-color: white;
+}
+
+.header {
+  width: 100%;
+  height: 5%;
+  float: left;
+  background-color: white;
+  min-height: 40px;
+}
+
+.componentselectorContainer {
+  float: left;
+  width: 50%;
+  height: 100px;
+  /*border: 1px solid black;*/
+}
+
+.item {
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  border: 2px solid black;
+  cursor: pointer;
+  border-radius: 3px;
+  background-color: white;
+  z-index: 1000;
+  opacity: 0.9;
+}
+
+.itemPreview {
+  height: 84px;
+  width: 93px;
+  border: 2px solid #989898;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.itemPreviewText {
+  text-align: center;
+  width: 100%;
+  float: left;
+  margin-top: 13px;
+  font-weight: bolder;
+  word-wrap: break-word;
+}
+
+.sidebarHeadingright {
+  width: 100%;
+  height: 35px;
+  border: 2px solid #EFF1F5;
+  border-right: 0;
+  margin-bottom: 10px;
+}
+
+.sidebarHeadingleft {
+  width: 100%;
+  height: 35px;
+  border: 2px solid #EFF1F5;
+  border-left: 0;
+  margin-bottom: 10px;
+}
+
+.headingComp {
+  float: left;
+  margin-top: 4px;
+  margin-left: 7px;
+  font-weight: bold;
+  color: #545252;
+}
+
+.rightbarheadinglight {
+  float: left;
+  margin-top: 4px;
+  margin-left: 3px;
+  color: #AFABAB;
+}
+
+.rightbarheadingdark {
+  float: left;
+  margin-top: 4px;
+  margin-left: 3px;
+}
+
+.rightbarcompnameheading {
+  float: left;
+  margin-top: 4px;
+  margin-left: 3px;
+}
+
+.cp {
+  cursor: pointer;
+}
+
+.inputtextdiv {
+  padding: 10px;
+}
+
+.nameinputtext {
+  float: left;
+  color: #8B9098;
+  font-size: 14px;
+  margin-top: 1px;
+  width: 25%;
+}
+
+.inputCompText {
+  float: right;
+  margin-top: -5px;
+  border-radius: 2px;
+  border: 1px solid rgba(138, 132, 132, 0.5);
+  padding: 5px;
+  width: 75%;
+}
+
+.treeViewContainer {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.tree-view_item {
+  height: 30px;
+  padding: 5px;
+  background-color: #6997F2;
+  width: 96%;
+  margin-left: 2%;
+  color: white;
+  border-radius: 3px;
+}
+
+.treechilddiv {
+  padding: 5px;
+  color: #585454;
+  width: 95%;
+  cursor: pointer;
+  padding-left: 20px;
+  float: left;
+}
+
+.treechilddiv:hover {
+  background-color: #F0F2F7;
+}
+
+.ComponentsDivContainer {
+  width: 100%;
+  height: 62%;
+  overflow-y: auto;
+}
+
+.treecontainerdiv {
+  height: 30%
+}
+
+.topbarcanvas {
+  width: 100%;
+  background-color: white;
+  height: 35px;
+  border: 2px solid #EFF1F5;
+}
+
+.canvascomparea {
+  width: 100%;
+  height: 96%;
+  border: 1px dashed #BDB9B9;
+}
+
+.zoomselector {
+  height: 100%;
+  float: right;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.zoompopover {
+  height: 160px;
+  width: 95px;
+}
+
+.zoomoptionspans {
+  width: 100%;
+  height: 31px;
+  float: left;
+  padding: 8px;
+  padding-left: 8px;
+  margin-top: 0px;
+  color: #828181;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.zoomoptionspans:hover {
+  background-color: #F5F5F5
+}
+
+.platforminfo {
+  height: 100%;
+  float: left;
+  margin-top: 5px;
+  margin-left: 8px;
+}
+
+.platforminfotype {
+  color: #908989;
+  margin-left: 8px;
+}
+
+.deletecomp {
+  float: right;
+  margin-right: 3px;
+  margin-top: 2px;
+  font-size: 15px;
+  color: rgba(204, 41, 41, 0.81);
+}
+
+.lefttreecompname {
+  width: 80%;
+  float: left;
+}
+
+.landingContent {
+  width: 100%;
+  height: 95%;
+  float: left;
+  border-top: 1px solid #D2D2CE;
+}
+
+.projectsheadingrow {
+  height: 50px;
+  float: left;
+  margin-top: 80px;
+  padding: 130px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.headingproject {
+  float: left;
+  font-size: 40px;
+  font-family: serif;
+}
+
+.buttonaddsystem {
+  float: right;
+  height: 40px;
+  padding: 12px 18px !important;
+  letter-spacing: 0px !important;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  text-transform: none !important;
+  background-color: #4dd87b;
+  border: none;
+  transition: 0.1s linear;
+  -webkit-transition: 0.1s linear;
+  -moz-transition: 0.1s linear;
+  color: white;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+  padding-top: 10px !important;
+}
+
+.projectscontentrow {
+  float: left;
+  margin-top: 80px;
+  padding: 130px;
+  padding-top: 30px;
+  padding-bottom: 0;
+  min-height: 400px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.projectcardcontainer {
+  height: 50px;
+  position: relative;
+  background-color: white;
+  float: left;
+  margin-right: 30px;
+  box-sizing: border-box;
+  transition: box-shadow 140ms linear;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  padding: 0;
+  margin-top: 10px;
+  width: 400px !important;
+  margin-bottom: 10px;
+}
+
+.projectcardcontainer:hover {
+  box-shadow: 0px 1px 20px rgba(0, 0, 0, 0.2);
+}
+
+.topprojecticon {
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: -29px;
+}
+
+.projecticonimage {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.newsystemtitle {
+  font-weight: normal !important;
+  font-size: 30px !important;
+  font-family: serif;
+}
+
+.newsystemrootclass {
+  height: 400px;
+}
+
+.newsystemname {
+  display: block;
+  width: 100%;
+  height: 48px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #dadde2;
+  border-radius: 2px !important;
+  box-shadow: none;
+  margin-top: 15px;
+}
+
+.newsystemname:focus {
+  border: 1px solid rgba(19, 69, 113, 0.55);
+}
+
+.contentclassaddsystme {
+  width: 650px !important;
+}
+
+.systemtypedivselector {
+  width: 137px;
+  height: 115px;
+  border-radius: 4px;
+  display: inline-block;
+  border: 2px solid rgba(188, 202, 210, 0.4);
+  margin-right: 15px;
+  margin-top: 15px;
+  transition: border 140ms linear;
+  cursor: pointer;
+}
+
+.systemtypedivselector:hover {
+  border: 2px solid rgb(15, 176, 204);
+}
+
+.selecttypeborder {
+  border: 2px solid rgb(15, 176, 204);
+}
+
+.systemtypetext {
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  width: 100%;
+  float: left;
+  margin-top: 42px;
+}
+
+.addsystemtypeselectspan {
+  width: 100%;
+  float: left;
+  margin-top: 20px;
+  color: #000000;
+  font-family: serif;
+  font-size: 17px;
+}
+
+.systemmodalbuttonscancel {
+  float: right;
+  font-size: 14px !important;
+  border-radius: 4px !important;
+  padding: 6px 24px !important;
+  letter-spacing: 0.02em !important;
+  min-height: 40px !important;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15), 0px 0px 1px rgba(0, 0, 0, 0.1) !important;
+  font-weight: bold !important;
+  border: none;
+  color: #374155;
+  background-color: #fff;
+  text-align: center;
+  padding-top: 9px !important;
+  margin-right: 7px;
+  cursor: pointer;
+}
+
+.systemmodalbuttonscreate {
+  float: right;
+  font-size: 14px !important;
+  border-radius: 4px !important;
+  padding: 6px 24px !important;
+  color: #FFF;
+  background-color: #4F92FF;
+  border-color: #4274C9;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.02em !important;
+  min-height: 40px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: none;
+  padding-top: 9px !important;
+  cursor: pointer;
+}
+
+.systemnewbtncontainer {
+  float: left;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.bottomprojectdiv {
+  width: 100%;
+  height: 30%;
+  border-top: 1px solid rgba(216, 215, 215, 0.51);
+}
+
+.cardname {
+  float: left;
+  margin: 0;
+  padding: 50px 0 10px 0;
+  font-size: 20px;
+  font-weight: normal;
+  text-align: center;
+  width: 100%;
+}
+
+.cardtype {
+  position: absolute;
+  right: 8px;
+  color: #d2d7df;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  top: 3px;
+}
+
+.deletesystemicon {
+  font-size: 28px;
+  background-size: 32px;
+  transition: color 0.1s ease, opacity 0.1s ease;
+  margin-right: auto;
+  margin-left: auto;
+  opacity: 0.2;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 10px;
+  margin-top: 8px;
+}
+
+.deletesystemicon:hover {
+  color: rgba(253, 15, 15, 0.62);
+  opacity: 1;
+}
+
+.cardAPItype {
+  width: 40%;
+  float: left;
+  padding-left: 15px;
+  color: black;
+  font-weight: bold;
+  margin-top: 25px;
+}
+
+.cardAPIpath {
+  max-width: 60%;
+  overflow-x: hidden;
+  float: left;
+  padding-left: 15px;
+  color: black;
+  font-weight: bold;
+  min-width: 25%;
+  margin-top: 25px;
+}
+
+.cardAPItypevalue {
+  color: #9E9E9E;
+  font-size: 15px;
+  float: left;
+  margin-top: -1px;
+  margin-left: 10px;
+}
+
+.cardAPIpathvalue {
+  color: #9E9E9E;
+  font-size: 17px;
+  float: left;
+  margin-left: 5px;
+  margin-top: -2px;
+}
+
+.editicontypepath {
+  float: right;
+  font-size: 13px;
+  margin-top: 3px;
+  margin-left: 4px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.APItypeandpathtext {
+  float: left;
+}
+
+.popupoptionsapitype {
+  float: left;
+  width: 100%;
+  height: 29px;
+  padding-left: 7px;
+  cursor: pointer;
+}
+
+.popupoptionsapitype:hover {
+  background-color: #F7F7F7;
+}
+
+.popapitype {
+  height: 131px;
+  width: 89px;
+  padding-top: 7px;
+}
+
+.poppath {
+  height: 30px;
+  width: 205px;
+}
+
+.inputpath {
+  width: 200px;
+  float: left;
+  margin-top: 3px;
+  margin-left: 2px;
+  border: 1px solid #E4E4E4;
+  border-radius: 3px;
+}
+
+.allcontentrows {
+  min-height: 50px;
+  float: left;
+  margin-top: 40px;
+  padding: 130px;
+  padding-top: 0;
+  padding-bottom: 0;
+  max-height: 400px;
+}
+
+.contentheadingcommon {
+  color: #504E4E;
+  font-family: serif;
+}
+
+.cardnameAPI {
+  float: left;
+  font-size: 13px;
+  font-weight: normal;
+  text-align: center;
+  width: 100%;
+  color: #7D7A7A;
+}
+
+.APItype {
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  float: left;
+  color: #716F6F;
+  margin-top: -5px;
+}
+
+.APIpath {
+  margin-left: 13px;
+  font-size: 17px;
+  float: left;
+  margin-top: -2px;
+  color: #676262;
+  font-family: serif;
+}
+
+.topprojectdivAPI {
+  width: 50%;
+  height: 29%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.midprojectdivAPI {
+  width: 90%;
+  height: 70%;
+  float: left;
+}
+
+.threedots {
+  float: right;
+  font-size: 27px !important;
+  margin-right: 8px;
+  margin-top: -5px;
+  cursor: pointer;
+  color: #6F6C6C;
+}
+
+.linkdash {
+  float: right;
+  font-size: 15px !important;
+  margin-right: 11px;
+  margin-top: 2px;
+  cursor: pointer;
+  color: #6F6C6C;
+}
+
+.rightprojectdiv {
+  float: left;
+  width: 10%;
+  height: 70%;
+}
+
+.settingmenu {
+  min-height: 131px;
+  width: 110px;
+  padding-top: 9px;
+}
+
+.settingmenuoption {
+  padding: 3px;
+  float: left;
+  width: 100%;
+  height: 29px;
+  padding-left: 7px;
+  cursor: pointer;
+}
+
+.settingmenuoption:hover {
+  background-color: #F7F7F7;
+}
+
+.midprojectdivworker {
+  width: 90%;
+  height: 100%;
+  float: left;
+}
+
+.rightprojectdivworker {
+  float: left;
+  width: 10%;
+  height: 70%;
+  margin-top: 17px;
+}
+
+.workername {
+  font-size: 20px;
+  color: #3C3B3B;
+  padding-left: 10px;
+  display: block;
+}
+
+.workerduration {
+  float: left;
+  padding-left: 1px;
+  color: #757373;
+}
+
+.workerstatuscriclegreen {
+  float: left;
+  margin-top: 14px;
+  margin-left: 10px;
+  margin-right: 15px;
+  font-size: 22px !important;
+  color: rgba(0, 128, 0, 0.56);
+}
+
+.workerstatuscriclered {
+  float: left;
+  margin-top: 14px;
+  margin-left: 10px;
+  margin-right: 15px;
+  font-size: 22px !important;
+  color: rgba(255, 0, 0, 0.71);
+}
+
+.npmicon {
+  float: right;
+  width: 45px;
+  height: 34px;
+  cursor: pointer;
+  margin-right: 8px;
+  margin-top: -1px;
+}
+
+.npmewbtncontainer {
+  float: left;
+  width: 100%;
+  bottom: 10px;
+  position: absolute;
+  left: -10px;
+}
+
+.packagelistcontainer {
+  height: 235px;
+  overflow-y: auto;
+  float: left;
+  width: 100%;
+}
+
+.npmpackagebox {
+  width: 100px;
+  height: 80px;
+  border-radius: 4px;
+  display: inline-block;
+  border: 2px solid rgba(188, 202, 210, 0.4);
+  margin-right: 15px;
+  margin-top: 15px;
+  transition: border 140ms linear;
+  cursor: pointer;
+  position: relative;
+}
+
+.npmpackagebox:hover {
+  border: 2px solid rgb(15, 176, 204);
+}
+
+.npmtypetext {
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: center;
+  width: 100%;
+  float: left;
+  position: absolute;
+  top: 15%;
+  word-wrap: break-word;
+}
+
+#nav-dash {
+  z-index: 1001;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  border-color: #DADDE2;
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  .container {
+    width: 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    .toolbar {
+      background-color: #FFF;
+      font-size: 14px;
+      height: 100%;
+      .icon {
+        height: 40px;
+        width: 40px;
+        position: relative;
+        border-radius: 10%;
+      }
+      .userhead {
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        margin-top: -4px;
+      }
+      span:hover {
+        cursor: pointer;
+        color: #666;
+      }
+    }
+  }
+}
+
+.cp {
+  cursor: pointer;
+}
+
+.app-selector-img {
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.app-list-item.selected-app {
+  background: #fafafa!important;
+  color: black!important;
+}
+
+.app-list-item {
+  border-bottom: 1px solid #f3f7fd!important;
+  border-top: 1px solid #f3f7fd!important;
+  color: #858585!important;
+}
+
+.optionpop {
+  min-width: 220px !important;
+  min-height: 70px !important;
+  border-radius: 5px !important;
+  overflow: visible !important;
+  font-family: Roboto !important;
+  div {
+    overflow: visible !important;
+  }
+}
+
+.headingpop {
+  height: 40px;
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  font-weight: 500;
+  margin-bottom: 0;
+  padding-left: 12px;
+  font-size: 11pt;
+  color: #2196f3;
+  text-transform: capitalize;
+}
+
+.feedback-textarea {
+  padding: 10px;
+  overflow: hidden;
+  display: block;
+  margin-top: 2px;
+  border: 0px;
+  resize: none;
+  height: 85px;
+  &:focus {
+    outline: none !important;
+  }
+  &::-webkit-input-placeholder {
+    font-size: 13px
+  }
+}
+
+.feedback-sendbtn,
+.feedback-sendbtn:focus,
+.feedback-sendbtn:active,
+.feedback-sendbtn:hover {
+  margin-bottom: 10px;
+  float: right;
+  margin-right: 10px;
+  background-color: #6080ff;
+  border: 0px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  padding: 5px;
+  border-radius: 6px;
+  outline: none !important;
+  color: white;
+  font-size: 14px;
+  margin-top: -12px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.feedbackSent {
+  width: 256px;
+  .thanks-text {
+    color: #549afc;
+    display: block;
+    text-align: center;
+    font-weight: 500;
+  }
+  .note-text {
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    margin-bottom: 19px;
+    color: grey;
+  }
+}
+
+.feedbackpopover {
+  border-radius: 7px!important
+}
+
+.optionBtn {
+  width: 100%;
+  border: 0px solid #EEE;
+  height: 35px;
+  background-color: #FFFFFF;
+  color: #5e5e5e;
+  margin-top: 0px;
+  text-align: left;
+  padding-left: 12px;
+  font-size: 14px;
+}
+
+.optionBtn:hover {
+  background-color: #eff1f5;
+  color: black;
+}
+
+.sendBtnDisabled {
+  float: right;
+  margin-right: 10px;
+  overflow: hidden;
+}
+
+.notification-wrap {
+  overflow-y: auto;
+  max-height: 400px;
+  display: grid;
+}
+
+.notificationdiv {
+  width: 100%;
+  min-height: 60px;
+  padding: 4px 12px;
+  border-bottom: 1px solid #eff1f5;
+  &:hover {
+    background: #eff1f5;
+  }
+}
+
+.notimgcontainer {
+  float: left;
+  width: 10%;
+  min-height: 60px;
+}
+
+.notdatacontainer {
+  float: right;
+  display: inline-block;
+  width: 90%;
+  min-height: 60px;
+}
+
+.notinvicon {
+  float: left;
+  width: 100%;
+  font-size: 40px;
+  margin-top: 4px;
+  color: #4aa3df;
+}
+
+.nottextinv {
+  color: #595959;
+  word-break: break-word;
+  font-size: 10pt;
+  width: 90%;
+  float: left;
+  padding-left: 10px;
+}
+
+.noteinvbtncontainer {
+  width: 100%;
+  padding-left: 10px;
+}
+
+.cancelbtnnotinv {
+  float: right;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  width: 66px!important;
+  background-color: white;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  outline: none !important;
+  font-size: 14px;
+  margin-top: 24px;
+  height: 23px;
+  vertical-align: initial;
+  margin-right: 10px
+}
+
+.acceptbtnnotinv {
+  float: right;
+  margin-bottom: 10px;
+  background-color: #6080ff;
+  border: 0px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  outline: none !important;
+  color: white;
+  font-size: 14px;
+  margin-top: 24px;
+  width: 66px;
+}
+
+.clearnotbtn {
+  color: #888;
+  float: right;
+  width: 50px!important;
+  background-color: #eee;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  outline: none !important;
+  font-size: 10pt;
+  margin-top: -2px;
+  height: 23px;
+  opacity: .5;
+}
+
+.notificationoffset {
+  margin-top: 50px !important;
+}
+
+.notebadge {
+  visibility: visible;
+  display: inline !important;
+  padding: 14px 24px 12px 7px !important;
+  float: right !important;
+  margin-left: -13px !important;
+  cursor: pointer;
+  margin-top: 1px;
+  svg {
+    color: rgb(97, 97, 97) !important;
+  }
+}
+
+.popovernotifications {
+  min-height: 200px;
+  width: 400px;
+  max-height: 500px !important;
+  padding-bottom: 15px;
+  overflow: visible !important;
+  border-radius: 7px!important;
+  > div {
+    overflow: visible;
+  }
+}
+
+.profilepoparrow {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid white;
+  border-radius: 3px;
+  width: 24px;
+}
+
+.notificationemptybell {
+  font-size: 65px;
+  color: #eaeaea;
+}
+
+.notpendingtasks {
+  width: 100%;
+  color: #585656;
+  font-size: 17px;
+  font-weight: 500;
+  padding-top: 8px;
+  padding-left: 17px;
+}
+
+.notificationemptymessage {
+  visibility: visible;
+  font-size: 15px;
+  margin-top: -22px;
+  color: #d1d1d1;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.okbtnnotinv {
+  visibility: visible;
+  background-color: #4892F9;
+  border: none;
+  color: white;
+  padding: 4px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-top: 5px;
+  margin-left: 36px;
+}
+
+.nottimestamp {
+  margin-top: 24px;
+  margin-left: 0px;
+  margin-bottom: 10px;
+  font-size: 10px;
+  color: #b4b4b4;
+  float: left;
+}
+
+.red-dot {
+  background: red;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  left: 31px;
+  top: 9px;
+}
+
+.coloptbtn {
+  width: 100%;
+  border: 0 solid #EEE;
+  height: 35px;
+  background-color: #FFFFFF;
+  color: #5e5e5e;
+  margin-top: 0;
+  text-align: left;
+  padding-left: 12px;
+  font-size: 14px;
+  &:hover {
+    background-color: #EEE;
+    color: black;
+  }
+}
+

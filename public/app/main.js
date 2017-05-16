@@ -1,3 +1,4 @@
+require('./assets/styles/custom.scss')
 import React from 'react'
 import { Provider } from 'mobx-react'
 import ReactDOM from 'react-dom'
