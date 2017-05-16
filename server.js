@@ -9,7 +9,7 @@ var database = require('./config/database');
 var morgan = require('morgan');
 var cookieParser = require('cookie-parser');
 var session      = require('express-session');
-
+var path = require('path');
 
 //============= app level middlewares ================ //
 mongoose.connect(database.remoteUrl); 	// Connect to local MongoDB instance. A remoteUrl is also available (modulus.io)
@@ -27,6 +27,11 @@ app.use(session({ secret: 'flowuisecret',resave: true,
 
 // ============ Routes =========== //
 app.use('/api',require('./app/routes')())
+
+
+app.use(function(req,res,next){
+	res.status(404).sendFile(path.join(__dirname,'./public/','404.html'));
+})
 
 server.listen(port, function () {
   console.log( "CloudBoost Flow running on :" + port )
